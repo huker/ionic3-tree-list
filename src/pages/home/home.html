@@ -1,0 +1,14 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            栗子
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <tree-list
+            [treeData]="treeData"
+            [initCode]="code"
+            (handleSelect)="handleSelect($event)"></tree-list>
+</ion-content>

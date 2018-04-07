@@ -1,0 +1,28 @@
+<!-- Generated template for the TreeListComponent component -->
+
+<div class="tree-content">
+    <ion-list>
+        <div *ngFor="let item of treeData">
+            <ng-container *ngTemplateOutlet="tpl;context:{item: item}"></ng-container>
+        </div>
+    </ion-list>
+</div>
+
+<ng-template #tpl let-item="item">
+    <ion-item [ngClass]="{'active':item.active}" *ngIf="!item[nodesText]||item[nodesText].length===0"
+              (click)="handleLastItem(item)">
+        {{item[labelText]}}
+    </ion-item>
+    <div *ngIf="item[nodesText]&&item[nodesText].length>0">
+        <ion-item (click)="handleArrow(item)">
+            <ion-icon class="arrow-icon" item-start
+                      [name]="item.isOpen?'md-arrow-dropdown':'md-arrow-dropright'"></ion-icon>
+            {{item[labelText]}}
+        </ion-item>
+        <ion-list class="dep-list" *ngIf="item.isOpen">
+            <div *ngFor="let node of item[nodesText]">
+                <ng-container *ngTemplateOutlet="tpl;context:{item: node}"></ng-container>
+            </div>
+        </ion-list>
+    </div>
+</ng-template>

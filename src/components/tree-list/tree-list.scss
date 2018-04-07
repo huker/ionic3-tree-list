@@ -1,0 +1,41 @@
+tree-list {
+  .tree-content {
+    background-color: #212b56;
+  }
+  .ion-list, .list-ios {
+    margin: 0 0 0 0 !important;
+  }
+  .label {
+    margin: 0 !important;
+  }
+  .item, .item-inner {
+    padding: 0 !important;
+    margin: 0 !important;
+    border-top: 0 !important;
+    * {
+      padding: 0 !important;
+      margin: 0 !important;
+      border-bottom: 0 !important;
+      border-top: 0 !important;
+    }
+  }
+  .item {
+    border-bottom: 0.55px solid #273458 !important;
+    padding: 0 0 0 20px !important;
+    background-color: #212b56;
+    color: #9cb6ff !important;
+    font-size: 14px;
+  }
+  .dep-list {
+    padding-left: 20px !important;
+  }
+  .arrow-icon {
+    font-size: 20px;
+    text-align: left !important;
+    padding-top: 6px !important;
+  }
+  .active {
+    background: #9cb6ff !important;
+    color: #212b56 !important;
+  }
+}
