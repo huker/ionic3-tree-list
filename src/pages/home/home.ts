@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {ModalController, NavController} from 'ionic-angular';
+import {SelectPage} from "../select/select";
 
 @Component({
     selector: 'page-home',
@@ -7,57 +8,23 @@ import {NavController} from 'ionic-angular';
 })
 export class HomePage {
 
-    treeData: any;
+    currentId: any = "10101";
+    currentLabel: any = "强袭高达";
 
-    code: any;
+    constructor(public navCtrl: NavController,
+                private modalCtrl: ModalController) {
 
-    constructor(public navCtrl: NavController) {
-        this.treeData = [
-            {
-                code: '1',
-                label: 'Gundam',
-                nodes: [
-                    {
-                        code: '101',
-                        label: '机动战士高达seed',
-                        nodes: [
-                            {
-                                code: '10101',
-                                label: '强袭高达'
-                            },
-                            {
-                                code: '10102',
-                                label: '自由高达'
-                            }
-                        ]
-                    },
-                    {
-                        code: '102',
-                        label: '机动战士高达00',
-                        nodes: [
-                            {
-                                code: '10201',
-                                label: 'Exia'
-                            },
-                            {
-                                code: '10202',
-                                label: 'Kyrios'
-                            },
-                        ]
-                    },
-                ]
-            },
-            {
-                code: '2',
-                label: 'EVA'
-            }
-        ];
-
-        this.code = '10101';
     }
 
-    handleSelect() {
-
+    select() {
+        let modal = this.modalCtrl.create(SelectPage, {
+            currentId: this.currentId
+        });
+        modal.present({direction: "forward"});
+        modal.onDidDismiss((res: any) => {
+            this.currentId = res.code;
+            this.currentLabel = res.label;
+        })
     }
 
 }

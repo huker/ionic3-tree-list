@@ -11,17 +11,19 @@ import lodash from "lodash";
     templateUrl: 'tree-list.html'
 })
 export class TreeListComponent {
-
+    //Input
+    //数据集
     @Input() treeData: any = {};
-
+    //初始选中的值
     @Input() initCode: any = {};
-
+    //id的key
     @Input() codeText: string = 'code';
-
+    //值的key
     @Input() labelText: string = 'label';
-
+    //子节点的key
     @Input() nodesText: string = 'nodes';
 
+    //Output
     @Output() handleSelect = new EventEmitter();
 
     firstTime: boolean = false;
@@ -56,6 +58,7 @@ export class TreeListComponent {
         }
     }
 
+    //选择最后的子Item
     handleLastItem(target) {
         this.handleSelect.emit(target);
     }

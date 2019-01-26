@@ -33,3 +33,5 @@ UserInterfaceState.xcuserstate
 
 .sourcemaps
 www
+resources
+package-lock.json

@@ -7,8 +7,12 @@
 </ion-header>
 
 <ion-content padding>
-    <tree-list
-            [treeData]="treeData"
-            [initCode]="code"
-            (handleSelect)="handleSelect($event)"></tree-list>
+    <ion-list>
+        <ion-item (click)="select()">
+            <ion-label item-start>机体选择:</ion-label>
+            <div item-end>
+                {{currentLabel}}
+            </div>
+        </ion-item>
+    </ion-list>
 </ion-content>
