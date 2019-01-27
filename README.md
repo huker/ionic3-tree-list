@@ -12,7 +12,46 @@
 ### event
 - handleSelect 参数为整个节点
 
-todo:
-- 节点自定义template
-- init
-- 样式自定义
+```
+//treeData格式
+treeData = [
+            {
+                code: '1',
+                label: 'Gundam',
+                nodes: [
+                    {
+                        code: '101',
+                        label: '机动战士高达seed',
+                        nodes: [
+                            {
+                                code: '10101',
+                                label: '强袭高达'
+                            },
+                            {
+                                code: '10102',
+                                label: '自由高达'
+                            }
+                        ]
+                    },
+                    {
+                        code: '102',
+                        label: '机动战士高达00',
+                        nodes: [
+                            {
+                                code: '10201',
+                                label: 'Exia'
+                            },
+                            {
+                                code: '10202',
+                                label: 'Kyrios'
+                            },
+                        ]
+                    },
+                ]
+            },
+            {
+                code: '2',
+                label: 'EVA'
+            }
+];
+```
